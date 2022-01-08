@@ -1,1 +1,58 @@
+// ---------submit feedback------------
+function submitFeedback() {
+ 
+    if (document.getElementById('comment').value == "") {
+        alert('Please provide your feedback.');
+        return false;
+    } else if (document.getElementById('comment').value.length < 20) {
+        alert('Feedback is too short! Please type more than 20 characters.');
+        return false;
+    } else {
+        document.getElementById('comment').value = "";
+        alert('Feedback submitted. Thank You!');
+    }
+}
+ 
+ 
+// ------------login modal-------------
+var modal = document.getElementById('id01');
+ 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+ 
+ 
+// ----------login validation----------
+function validate() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == "admin" && password == "password") {
+        alert("Login Succesfully!");
+        window.open("Managerial-Module.html");
+    } else if (document.getElementById("username").value == "") {
+        alert('Please fill out empty field.');
+        return false;
+    } else if (document.getElementById("password").value == "") {
+        alert('Please fill out empty field.');
+        return false;
+    } else {
+        alert("Wrong combination of Username and Password!");
+        return false;
+    }
+}
+ 
+function cancel() {
+    document.getElementById('username').value = "";
+    document.getElementById('password').value = "";
+}
+ 
+ 
+// ---------- book now ----------
+function reservation() {
+    window.open("Reservation Module.html");
+}
+
 
